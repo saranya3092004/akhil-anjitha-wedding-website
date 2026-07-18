@@ -1,60 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-cormorant: "Cormorant Garamond", Georgia, serif;
+  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-script: "Great Vibes", cursive;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  
-  --color-gold-50: #fdfbf7;
-  --color-gold-100: #f7eed7;
-  --color-gold-200: #eedcaf;
-  --color-gold-300: #e1c483;
-  --color-gold-400: #d1a85a;
-  --color-gold-500: #bc8939;
-  --color-gold-600: #9e6b28;
-  --color-gold-700: #7f501f;
-  --color-gold-800: #5e3717;
-  --color-gold-900: #3f220d;
 
-  --color-royal-50: #faf4f5;
-  --color-royal-100: #f5e6e8;
-  --color-royal-200: #ecd2d6;
-  --color-royal-300: #dcb2b9;
-  --color-royal-400: #c68591;
-  --color-royal-500: #ab5d6d;
-  --color-royal-600: #8f4453;
-  --color-royal-700: #753340;
-  --color-royal-800: #622b35;
-  --color-royal-900: #4a2128;
+  /* Terracotta accent family */
+  --color-gold-50:  #FDF6EC;
+  --color-gold-100: #7A3D1A;   /* body copy on light bg */
+  --color-gold-200: #6B2A10;   /* headings on light bg */
+  --color-gold-300: #8C4420;   /* subheads/italics */
+  --color-gold-400: #C97D3D;   /* icons, labels, mid accent */
+  --color-gold-500: #B4622A;
+  --color-gold-600: #954D1F;
+  --color-gold-700: #7A3D1A;
+  --color-gold-800: #5C2E14;
+  --color-gold-900: #3B1D0C;
+
+  /* Background pair — primary (lighter ivory) + secondary (deeper beige) */
+  --color-maroon-950: #FBF3E7;  /* primary bg — Hero, Guestbook, Events */
+  --color-maroon-900: #F5E8D3;  /* secondary bg — About, Gallery, cards */
+  --color-maroon-800: #7A2E12;  /* strong heading/text tone */
+  --color-maroon-700: #A64420;  /* mid accent text */
 }
 
 @layer base {
   body {
-    @apply font-sans bg-gold-50 text-gold-900 selection:bg-gold-200;
+    @apply font-sans bg-maroon-950 text-maroon-800 selection:bg-gold-400/30 selection:text-maroon-800 overflow-x-hidden;
+    background-image: radial-gradient(circle at center, #FDF8EF 0%, #F5E8D3 100%);
+    background-attachment: fixed;
   }
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #bc8939 0%, #e1c483 50%, #9e6b28 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.maroon-silk-bg {
+  background: linear-gradient(135deg, #FBF3E7 0%, #F5E8D3 50%, #FDF6EC 100%);
 }
 
-.burgundy-gradient {
-  background: linear-gradient(135deg, #753340 0%, #4a2128 100%);
+.gold-gradient-text {
+  background: linear-gradient(90deg, #A64420 0%, #C97D3D 50%, #7A2E12 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .gold-border {
-  border-image: linear-gradient(to right, #9e6b28, #e1c483, #9e6b28) 1;
+  border-image: linear-gradient(to right, #954D1F, #E3B274, #954D1F) 1;
 }
 
-/* Subtle pattern background for sections */
-.mandap-pattern {
-  background-color: #fdfbf7;
-  background-image: 
-    radial-gradient(circle at 100% 150%, #f5e6e8 24%, transparent 24%),
-    radial-gradient(circle at 0% 150%, #f5e6e8 24%, transparent 24%);
-  background-size: 100px 100px;
-  background-opacity: 0.1;
+.temple-border-top {
+  background: repeating-linear-gradient(
+    90deg,
+    #A64420,
+    #A64420 2px,
+    transparent 2px,
+    transparent 14px,
+    #C97D3D 14px,
+    #C97D3D 16px,
+    transparent 16px,
+    transparent 22px
+  );
+  height: 3px;
+  width: 100%;
 }
 
+@keyframes mandalaSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.mandala-spin { animation: mandalaSpin 30s linear infinite; }
+.mandala-spin-reverse { animation: mandalaSpin 25s linear infinite reverse; }
+
+@keyframes petalFall {
+  0% { transform: translateY(-50px) rotate(0deg) translateX(0); opacity: 0; }
+  10% { opacity: 0.55; }
+  90% { opacity: 0.55; }
+  100% { transform: translateY(105vh) rotate(540deg) translateX(60px); opacity: 0; }
+}
+@keyframes sway {
+  0%, 100% { margin-left: 0px; }
+  33% { margin-left: 20px; }
+  66% { margin-left: -20px; }
+}
+.falling-petal {
+  animation: petalFall 12s linear infinite, sway 4s ease-in-out infinite alternate;
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 12px rgba(166, 68, 32, 0.10), inset 0 0 12px rgba(166, 68, 32, 0.04);
+  border: 1px solid rgba(166, 68, 32, 0.18);
+}
+.gold-border-glow-hover:hover {
+  box-shadow: 0 0 20px rgba(166, 68, 32, 0.2), inset 0 0 16px rgba(166, 68, 32, 0.08);
+  border-color: rgba(166, 68, 32, 0.35);
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
