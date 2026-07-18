@@ -18,7 +18,6 @@ export interface RSVP {
   guestsCount: number;
   attending: 'yes' | 'no';
   events: string[]; // e.g., ['marriage', 'reception']
-  foodPreference: 'veg' | 'non-veg';
   message?: string;
   submittedAt: string;
 }
