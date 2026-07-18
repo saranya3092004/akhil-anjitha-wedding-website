@@ -1,0 +1,63 @@
+{
+  "wishes": [
+    {
+      "id": "wish-1",
+      "name": "Vinod Nair",
+      "relation": "Family Friend",
+      "message": "Congratulations Akhil and Anjitha! Wishing you both a lifetime of love, laughter, and endless happiness together. Can't wait to celebrate with you!",
+      "createdAt": "2026-07-14T13:03:07.156Z"
+    },
+    {
+      "id": "wish-2",
+      "name": "Dr. Sandeep & Divya",
+      "relation": "Cousin of Groom",
+      "message": "So happy for you two! Wishing you a gorgeous wedding day and an even more wonderful marriage. Cheers to a beautiful journey!",
+      "createdAt": "2026-07-16T13:03:07.157Z"
+    },
+    {
+      "id": "wish-3",
+      "name": "Meera Krishnan",
+      "relation": "Friend of Bride",
+      "message": "Anjitha, you are going to be the most beautiful bride! Wishing Akhil and you all the blessings in the world. See you at the Kalyanam!",
+      "createdAt": "2026-07-17T13:03:07.157Z"
+    },
+    {
+      "id": "wish-1784298314229-oiis",
+      "name": "saranya",
+      "relation": "Groom's Family",
+      "message": "Exicted for ur wedding",
+      "createdAt": "2026-07-17T14:25:14.229Z"
+    }
+  ],
+  "rsvps": [
+    {
+      "id": "rsvp-1",
+      "name": "Vinod Nair",
+      "email": "vinod.nair@example.com",
+      "phone": "+91 98765 43210",
+      "guestsCount": 3,
+      "attending": "yes",
+      "events": [
+        "marriage",
+        "reception"
+      ],
+      "foodPreference": "veg",
+      "message": "Excited to attend and bless the couple!",
+      "submittedAt": "2026-07-14T13:03:07.157Z"
+    },
+    {
+      "id": "rsvp-2",
+      "name": "Rahul Kumar",
+      "email": "rahul.k@example.com",
+      "phone": "+91 99887 76655",
+      "guestsCount": 2,
+      "attending": "yes",
+      "events": [
+        "marriage"
+      ],
+      "foodPreference": "non-veg",
+      "message": "Will make it for the Marriage ceremony. Congrats guys!",
+      "submittedAt": "2026-07-15T13:03:07.157Z"
+    }
+  ]
+}

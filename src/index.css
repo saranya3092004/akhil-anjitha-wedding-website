@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  
+  --color-gold-50: #fdfbf7;
+  --color-gold-100: #f7eed7;
+  --color-gold-200: #eedcaf;
+  --color-gold-300: #e1c483;
+  --color-gold-400: #d1a85a;
+  --color-gold-500: #bc8939;
+  --color-gold-600: #9e6b28;
+  --color-gold-700: #7f501f;
+  --color-gold-800: #5e3717;
+  --color-gold-900: #3f220d;
+
+  --color-royal-50: #faf4f5;
+  --color-royal-100: #f5e6e8;
+  --color-royal-200: #ecd2d6;
+  --color-royal-300: #dcb2b9;
+  --color-royal-400: #c68591;
+  --color-royal-500: #ab5d6d;
+  --color-royal-600: #8f4453;
+  --color-royal-700: #753340;
+  --color-royal-800: #622b35;
+  --color-royal-900: #4a2128;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-gold-50 text-gold-900 selection:bg-gold-200;
+  }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #bc8939 0%, #e1c483 50%, #9e6b28 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.burgundy-gradient {
+  background: linear-gradient(135deg, #753340 0%, #4a2128 100%);
+}
+
+.gold-border {
+  border-image: linear-gradient(to right, #9e6b28, #e1c483, #9e6b28) 1;
+}
+
+/* Subtle pattern background for sections */
+.mandap-pattern {
+  background-color: #fdfbf7;
+  background-image: 
+    radial-gradient(circle at 100% 150%, #f5e6e8 24%, transparent 24%),
+    radial-gradient(circle at 0% 150%, #f5e6e8 24%, transparent 24%);
+  background-size: 100px 100px;
+  background-opacity: 0.1;
+}
+

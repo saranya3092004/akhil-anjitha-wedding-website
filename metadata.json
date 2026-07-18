@@ -1,0 +1,6 @@
+{
+  "name": "Akhil & Anjitha Wedding Website",
+  "description": "A beautiful, responsive wedding invitation website for Akhil M and Anjitha R featuring event details, a countdown, a guestbook for instant wishes, and an RSVP management system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
