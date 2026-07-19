@@ -63,11 +63,47 @@ export default function Events() {
 
   return (
     <section id="events" className="py-24 bg-maroon-950 relative overflow-hidden">
+
+       {/* Left side floral vine */}
+    <div className="absolute top-0 left-0 h-full w-40 opacity-[0.12] pointer-events-none z-0">
+      <svg viewBox="0 0 100 800" className="h-full w-full" preserveAspectRatio="xMinYMin slice">
+        <path d="M20 0 Q40 100 20 200 Q0 300 20 400 Q40 500 20 600 Q0 700 20 800" fill="none" stroke="#A64420" strokeWidth="2" />
+        {Array.from({ length: 8 }).map((_, i) => (
+          <g key={i} transform={`translate(20 ${i * 100 + 40})`}>
+            <circle r="10" fill="#C97D3D" />
+            <circle r="4" fill="#7A2E12" />
+            <ellipse rx="16" ry="6" fill="#C97D3D" transform="rotate(35)" />
+            <ellipse rx="16" ry="6" fill="#C97D3D" transform="rotate(-35)" />
+          </g>
+        ))}
+      </svg>
+    </div>
+
+    {/* Right side floral vine, mirrored */}
+    <div className="absolute top-0 right-0 h-full w-40 opacity-[0.12] pointer-events-none z-0">
+      <svg viewBox="0 0 100 800" className="h-full w-full" preserveAspectRatio="xMaxYMin slice">
+        <path d="M80 0 Q60 100 80 200 Q100 300 80 400 Q60 500 80 600 Q100 700 80 800" fill="none" stroke="#A64420" strokeWidth="2" />
+        {Array.from({ length: 8 }).map((_, i) => (
+          <g key={i} transform={`translate(80 ${i * 100 + 90})`}>
+            <circle r="10" fill="#C97D3D" />
+            <circle r="4" fill="#7A2E12" />
+            <ellipse rx="16" ry="6" fill="#C97D3D" transform="rotate(35)" />
+            <ellipse rx="16" ry="6" fill="#C97D3D" transform="rotate(-35)" />
+          </g>
+        ))}
+      </svg>
+    </div>
+
+    {/* Existing blur blobs stay */}
+    <div className="absolute top-0 right-0 w-80 h-80 bg-maroon-900/10 rounded-full filter blur-3xl z-0" />
+    <div className="absolute bottom-0 left-0 w-96 h-96 bg-maroon-900/10 rounded-full filter blur-3xl z-0" />
+
+    <div className="max-w-6xl mx-auto px-4 relative z-10"></div>
       
       {/* Decorative Background Accents */}
       <div className="absolute top-0 right-0 w-80 h-80 bg-maroon-900/10 rounded-full filter blur-3xl -z-10" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-maroon-900/10 rounded-full filter blur-3xl -z-10" />
-
+      
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         
         {/* Section Heading */}

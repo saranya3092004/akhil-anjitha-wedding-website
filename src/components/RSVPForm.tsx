@@ -65,6 +65,40 @@ export default function RSVPForm() {
 
   return (
     <section id="rsvp" className="py-24 bg-maroon-950 relative overflow-hidden">
+
+          {/* Floral spray, top-left corner */}
+    <div className="absolute -top-10 -left-10 w-56 h-56 opacity-[0.11] pointer-events-none z-0">
+      <svg viewBox="0 0 200 200" className="w-full h-full">
+        <path d="M20 20 Q60 40 50 90 Q100 70 120 110" fill="none" stroke="#A64420" strokeWidth="2" />
+        {[[50, 90], [90, 60], [120, 110], [30, 50]].map(([x, y], i) => (
+          <g key={i} transform={`translate(${x} ${y})`}>
+            <circle r="9" fill="#C97D3D" />
+            <ellipse rx="13" ry="5" fill="#8C4420" transform="rotate(25)" />
+            <ellipse rx="13" ry="5" fill="#8C4420" transform="rotate(-25)" />
+          </g>
+        ))}
+      </svg>
+    </div>
+
+    {/* Floral spray, bottom-right corner, mirrored */}
+    <div className="absolute -bottom-10 -right-10 w-56 h-56 opacity-[0.11] pointer-events-none z-0">
+      <svg viewBox="0 0 200 200" className="w-full h-full">
+        <path d="M180 180 Q140 160 150 110 Q100 130 80 90" fill="none" stroke="#A64420" strokeWidth="2" />
+        {[[150, 110], [110, 140], [80, 90], [170, 150]].map(([x, y], i) => (
+          <g key={i} transform={`translate(${x} ${y})`}>
+            <circle r="9" fill="#C97D3D" />
+            <ellipse rx="13" ry="5" fill="#8C4420" transform="rotate(25)" />
+            <ellipse rx="13" ry="5" fill="#8C4420" transform="rotate(-25)" />
+          </g>
+        ))}
+      </svg>
+    </div>
+
+    {/* Existing blur blobs stay */}
+    <div className="absolute top-10 -left-10 w-64 h-64 bg-gold-400/10 rounded-full filter blur-3xl z-0" />
+    <div className="absolute bottom-10 -right-10 w-72 h-72 bg-gold-300/15 rounded-full filter blur-3xl z-0" />
+
+    <div className="max-w-4xl mx-auto px-4 relative z-10"></div>
       {/* Decorative background accents */}
       <div className="absolute top-10 -left-10 w-64 h-64 bg-gold-400/10 rounded-full filter blur-3xl -z-10" />
       <div className="absolute bottom-10 -right-10 w-72 h-72 bg-gold-300/15 rounded-full filter blur-3xl -z-10" />

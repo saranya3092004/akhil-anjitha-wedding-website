@@ -48,9 +48,7 @@ export default function About() {
               <h3 className="font-playfair italic text-2xl md:text-3xl font-semibold text-gold-200 mb-1">Akhil M</h3>
               <p className="text-[10px] uppercase tracking-widest text-gold-500 font-bold mb-4 font-cormorant">The Groom</p>
               <p className="text-sm text-maroon-800 font-cormorant leading-relaxed max-w-sm">
-                Known for his calm demeanor, kind heart, and infectious optimism. Akhil is a dedicated professional who cherishes family values, deep conversations, and has a strong passion for making every moment count.
-              </p>
-            </div>
+He may not be the loudest in the room, but he is always the one you can count on. Calm, caring, and endlessly supportive, he makes life easier for everyone around him. His jokes are rarely on time and not always the best—but somehow, they're impossible not to laugh at. That's just who he is: effortlessly lovable in his own way.</p>            </div>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
@@ -63,8 +61,7 @@ export default function About() {
               <h3 className="font-playfair italic text-2xl md:text-3xl font-semibold text-gold-200 mb-1">Anjitha R</h3>
               <p className="text-[10px] uppercase tracking-widest text-gold-500 font-bold mb-4 font-cormorant">The Bride</p>
               <p className="text-sm text-maroon-800 font-cormorant leading-relaxed max-w-sm">
-                Vibrant, graceful, and full of life. Anjitha brings light and joy to everyone she meets. She has a deep appreciation for art, traditional values, and loves finding beauty in the little details of life.
-              </p>
+She is the kind of person whose heart is as beautiful as her smile. With a gentle soul and a heart full of kindness, she finds true happiness in making others smile. Her warmth, grace, and compassion touch every life she meets. She believes that the simplest acts of love leave the deepest impact. Today, she steps into a beautiful new journey, where love becomes her forever.              </p>
             </div>
           </motion.div>
 
@@ -75,9 +72,9 @@ export default function About() {
 
           <div className="relative border-l border-gold-400/30 ml-4 md:ml-32">
             {[
-              { title: "The First Meeting", date: "March 2024", desc: "An introduction facilitated by family soon turned into hours of endless conversation. They discovered a shared worldview, common interests, and an immediate, comfortable connection." },
-              { title: "Growing Closer", date: "July 2024", desc: "Through video calls, messages, and unforgettable shared laughter, they became each other's best friends, confidants, and constant support systems." },
-              { title: "The Engagement", date: "January 2025", desc: "With the full, joyous blessings of both families, Akhil and Anjitha exchanged rings, officially taking their first step toward building a lifetime together." }
+              { title: "The First Conversation", date: "JANUARY 2026", desc: "What began as a family-arranged introduction soon turned into hours of heartfelt conversations. From their very first call, they found comfort in each other's presence, discovering shared values, genuine understanding, and an effortless connection that felt truly special." },
+              { title: "Growing Closer", date: "FEBRUARY 2026", desc: "Through countless voice calls, video calls, and endless conversations, they shared their dreams, joys, challenges, and life's little moments. With every passing day, they became each other's trusted friend, greatest supporter, and a source of strength, building a bond filled with love, laughter, and understanding." },
+              { title: "The Engagement", date: "APRIL 2026", desc: "With the blessings of both families, they exchanged rings as a beautiful promise of forever. This special day marked the beginning of a lifelong commitment, celebrating the love they had nurtured and the journey they were ready to embrace together." }
             ].map((step, idx) => (
               <motion.div key={step.title} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: idx * 0.15 }} className="mb-10 ml-6 relative">
                 <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-gold-400 border-4 border-maroon-900 shadow-md" />

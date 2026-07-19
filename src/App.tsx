@@ -82,6 +82,8 @@ export default function App() {
     }
   };
 
+  
+
   const navLinks = [
     { id: 'home', label: 'Home' },
     { id: 'story', label: 'Our Story' },
@@ -178,9 +180,11 @@ export default function App() {
         transition={{ delay: 1.5, duration: 0.9 }}
         className="relative z-10 text-center px-4"
       >
-        <div className="font-playfair italic text-4xl md:text-6xl font-bold tracking-wide text-gold-100 drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
-          Akhil <span className="font-cormorant font-light text-gold-200 mx-2">&</span> Anjitha
-        </div>
+      <div className="font-playfair italic text-4xl md:text-6xl font-bold tracking-wide text-[#FAF3E0] drop-shadow-[0_4px_16px_rgba(0,0,0,1)]">
+  Akhil{" "}
+  <span className="font-cormorant font-light text-[#C8A96A] mx-2">&</span>{" "}
+  Anjitha
+</div>
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: '100px' }}
@@ -188,7 +192,7 @@ export default function App() {
           className="h-[1.5px] mx-auto mt-4"
           style={{ background: 'linear-gradient(90deg, transparent, #C97D3D, transparent)' }}
         />
-        <div className="font-cormorant text-xs uppercase tracking-[0.3em] text-gold-200/80 mt-4">
+        <div className="font-cormorant text-xs uppercase tracking-[0.3em] text-[#FAF3E0] mt-4">
           September 13, 2026
         </div>
       </motion.div>
@@ -202,64 +206,83 @@ export default function App() {
       {/* ---------------------------------------------------- */}
       {/* FLOATING HEADER NAVBAR */}
       {/* ---------------------------------------------------- */}
-      <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-          isScrolled 
-            ? 'bg-[#2a0610]/95 backdrop-blur-md shadow-2xl py-3 border-b border-gold-400/30' 
-            : 'bg-transparent py-5'
-        }`}
+<header
+  className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+    isScrolled
+      ? "bg-[#2B0F0F]/95 backdrop-blur-md shadow-2xl py-3 border-b border-[#C8A96A]/30"
+      : "bg-transparent py-5"
+  }`}
+>
+  <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
+
+    {/* Logo */}
+    <button
+      onClick={() => scrollToSection("home")}
+      className="flex items-center gap-3 cursor-pointer group text-left bg-transparent border-0 p-0"
+    >
+      <div
+        className="font-playfair italic text-2xl md:text-3xl font-bold tracking-wider text-[#FFF8E7] flex items-center gap-2 transition-all duration-300 group-hover:text-white"
+        style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}
       >
-        <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
-          
-          {/* Logo Monogram */}
-          <button 
-            onClick={() => scrollToSection('home')}
-            className="flex items-center gap-2 cursor-pointer group text-left bg-transparent border-0 p-0"
-          >
-            <div className="font-playfair italic text-2xl md:text-3xl font-bold tracking-wider text-gold-300 flex items-center gap-1.5 group-hover:text-gold-200 transition-colors">
-              <span>A</span>
-              <Heart className="w-3.5 h-3.5 text-gold-400 fill-gold-400/20 group-hover:scale-125 group-hover:fill-gold-400/40 transition-all" />
-              <span>A</span>
-            </div>
-            <div className="hidden sm:block w-[1px] h-5 bg-gold-400/30 self-center mx-1" />
-            <span className="hidden sm:inline font-cormorant text-xs uppercase tracking-widest text-gold-400 font-medium">
-              Wedding Invitation
-            </span>
-          </button>
+        <span>A</span>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className={`text-xs uppercase tracking-[0.18em] font-medium font-cormorant transition-all duration-300 relative py-1 cursor-pointer bg-transparent border-0 ${
-                  activeSection === link.id
-                    ? 'text-gold-100 font-bold'
-                    : 'text-gold-300/80 hover:text-gold-100'
-                }`}
-              >
-                {link.label}
-                {activeSection === link.id && (
-                  <motion.div
-                    layoutId="activeNavIndicator"
-                    className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent"
-                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </button>
-            ))}
-          </nav>
+        <Heart
+          className="w-4 h-4 text-[#E6C88C] fill-[#E6C88C]/40 group-hover:fill-[#E6C88C] group-hover:scale-125 transition-all duration-300"
+        />
 
-          {/* Mobile Menu Open Button */}
-          <button
-            onClick={() => setMobileMenuOpen(true)}
-            className="lg:hidden text-gold-300 hover:text-gold-100 transition-colors p-1.5 cursor-pointer bg-transparent border-0"
-          >
-            <Menu className="w-6 h-6" />
-          </button>
-        </div>
-      </header>
+        <span>A</span>
+      </div>
+
+      <div className="hidden sm:block w-px h-5 bg-[#E6C88C]/40" />
+
+      <span
+        className="hidden sm:inline font-cormorant text-xs uppercase tracking-[0.25em] text-[#F7E7CE] font-semibold"
+        style={{ textShadow: "0 1px 6px rgba(0,0,0,0.8)" }}
+      >
+        Wedding Invitation
+      </span>
+    </button>
+
+    {/* Desktop Navigation */}
+    <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+      {navLinks.map((link) => (
+        <button
+          key={link.id}
+          onClick={() => scrollToSection(link.id)}
+          className={`text-xs uppercase tracking-[0.18em] font-medium font-cormorant transition-all duration-300 relative py-1 bg-transparent border-0 ${
+            activeSection === link.id
+              ? "text-[#FFF8E7] font-semibold"
+              : "text-[#F7E7CE] hover:text-white"
+          }`}
+          style={{ textShadow: "0 1px 6px rgba(0,0,0,0.8)" }}
+        >
+          {link.label}
+
+          {activeSection === link.id && (
+            <motion.div
+              layoutId="activeNavIndicator"
+              className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#E6C88C] to-transparent"
+              transition={{
+                type: "spring",
+                stiffness: 380,
+                damping: 30,
+              }}
+            />
+          )}
+        </button>
+      ))}
+    </nav>
+
+    {/* Mobile Menu */}
+    <button
+      onClick={() => setMobileMenuOpen(true)}
+      className="lg:hidden text-[#FFF8E7] hover:text-[#E6C88C] transition-colors p-1.5 bg-transparent border-0"
+      style={{ textShadow: "0 1px 6px rgba(0,0,0,0.8)" }}
+    >
+      <Menu className="w-6 h-6" />
+    </button>
+  </div>
+</header>
 
       {/* ---------------------------------------------------- */}
       {/* MOBILE FULL-SCREEN NAVIGATION DRAWER */}
@@ -345,36 +368,68 @@ export default function App() {
       {/* ---------------------------------------------------- */}
       {/* ROMANTIC FOOTER */}
       {/* ---------------------------------------------------- */}
-      <footer className="relative py-20 overflow-hidden border-t border-gold-400/10" style={{ background: 'linear-gradient(to bottom, #2D0610, #170207)' }}>
-        {/* Decorative elements */}
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 border border-[#c9a84c]/5 rounded-full" />
-        <div className="absolute -top-32 -right-32 w-64 h-64 border border-[#c9a84c]/5 rounded-full" />
+<footer
+  className="relative py-20 overflow-hidden border-t border-[#C8A96A]/20"
+  style={{
+    background: "linear-gradient(to bottom, #2B0F0F 0%, #170207 100%)",
+  }}
+>
+  {/* Decorative circles */}
+  <div className="absolute -bottom-32 -left-32 w-64 h-64 border border-[#E6C88C]/10 rounded-full" />
+  <div className="absolute -top-32 -right-32 w-64 h-64 border border-[#E6C88C]/10 rounded-full" />
 
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10 flex flex-col items-center">
-          <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-gold-400 to-transparent mb-6" />
-          
-          <h2 className="font-playfair italic text-3xl font-semibold tracking-wider text-gold-200 mb-4">
-            Thank You
-          </h2>
-          
-          <p className="text-sm md:text-base text-gold-100/70 max-w-md font-cormorant italic leading-relaxed mb-8">
-            "Your presence, prayers, and beautiful blessings are the greatest gifts we could ever receive. We hope to celebrate this milestone together with you."
-          </p>
+  <div className="relative z-10 max-w-4xl mx-auto px-4 flex flex-col items-center text-center">
 
-          <div className="font-playfair italic text-2xl font-bold tracking-widest text-gold-300 mb-1">
-            Akhil & Anjitha
-          </div>
-          <div className="text-[10px] uppercase tracking-widest text-gold-400/80 font-semibold font-cormorant">
-            September 13, 2026 • Palakkad, Kerala
-          </div>
+    {/* Top Divider */}
+    <div className="w-20 h-px bg-gradient-to-r from-transparent via-[#E6C88C] to-transparent mb-6" />
 
-          <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-gold-400 to-transparent mt-8 mb-4" />
-          <p className="text-[10px] text-gold-400/50 font-sans tracking-wider">
-            All Rights Reserved © 2026. Made with Love.
-          </p>
-        </div>
-      </footer>
+    {/* Heading */}
+    <h2
+      className="font-playfair italic text-3xl md:text-4xl font-semibold tracking-wide text-[#FFF8E7] mb-4"
+      style={{ textShadow: "0 2px 10px rgba(0,0,0,0.7)" }}
+    >
+      Thank You
+    </h2>
 
+    {/* Quote */}
+    <p
+      className="max-w-md text-base font-cormorant italic leading-relaxed text-[#F7E7CE] mb-8"
+      style={{ textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}
+    >
+      "Your presence, prayers, and beautiful blessings are the greatest gifts
+      we could ever receive. We hope to celebrate this milestone together with
+      you."
+    </p>
+
+    {/* Couple Names */}
+    <div
+      className="font-playfair italic text-3xl md:text-4xl font-bold tracking-wider text-[#FFF8E7] mb-2"
+      style={{ textShadow: "0 2px 10px rgba(0,0,0,0.7)" }}
+    >
+      Akhil{" "}
+      <span className="font-cormorant font-light text-[#E6C88C]">
+        &
+      </span>{" "}
+      Anjitha
+    </div>
+
+    {/* Date & Venue */}
+    <div
+      className="text-xs uppercase tracking-[0.25em] text-[#E6C88C] font-semibold font-cormorant"
+      style={{ textShadow: "0 1px 6px rgba(0,0,0,0.6)" }}
+    >
+      September 13, 2026 • Palakkad, Kerala
+    </div>
+
+    {/* Bottom Divider */}
+    <div className="w-20 h-px bg-gradient-to-r from-transparent via-[#E6C88C] to-transparent mt-8 mb-5" />
+
+    {/* Copyright */}
+    <p className="text-xs tracking-[0.15em] text-[#D8C8A8] font-cormorant">
+      All Rights Reserved © 2026 • Made with ❤ for Akhil &amp; Anjitha
+    </p>
+  </div>
+</footer>
       {/* Floating Music Player */}
       <MusicPlayer />
 

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Music, Volume2, VolumeX, Sparkles } from 'lucide-react';
+import weddingMusic from '../music/music.mp3';
 
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -37,11 +38,8 @@ export default function MusicPlayer() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none" id="music-player-container">
       {/* Invisible HTML5 Audio Element */}
       <audio ref={audioRef} loop preload="auto">
-        {/* Beautiful high quality classical piano - Bach's Prelude in C major (BWV 846) */}
-        <source src="https://upload.wikimedia.org/wikipedia/commons/d/df/J.S._Bach_-_Prelude_and_Fugue_in_C_Major%2C_BWV_846_-_I._Prelude.ogg" type="audio/ogg" />
-        {/* High quality stable fallback piano instrumental */}
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg" />
-      </audio>
+  <source src={weddingMusic} type="audio/mpeg" />
+</audio>
 
       <AnimatePresence>
         {showTooltip && (

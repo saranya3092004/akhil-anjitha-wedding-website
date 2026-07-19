@@ -81,6 +81,13 @@ export default function Guestbook() {
   return (
     <section id="guestbook" className="py-24 bg-maroon-950 relative overflow-hidden border-b border-gold-400/10">
       <div className="max-w-6xl mx-auto px-4 relative z-10">
+         <div className="absolute top-1/3 -left-20 w-80 h-80 opacity-[0.05] pointer-events-none -z-10">
+        <svg viewBox="0 0 300 300" className="w-full h-full mandala-spin-reverse">
+          {Array.from({ length: 10 }).map((_, idx) => (
+            <ellipse key={idx} cx="150" cy="60" rx="8" ry="20" fill="#8C4420" transform={`rotate(${idx * 36} 150 150)`} />
+          ))}
+        </svg>
+      </div>
 
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-16">

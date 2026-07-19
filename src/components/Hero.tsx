@@ -87,14 +87,19 @@ export default function Hero() {
           transition={{ duration: 1.2 }}
           className="w-14 h-14 md:w-16 md:h-16 mb-5"
         >
-          <svg viewBox="0 0 100 100" className="w-full h-full">
-            <circle cx="50" cy="50" r="34" fill="none" stroke="#145F49" strokeWidth="1.5" opacity="0.6" />
-            <path
-              d="M50 20 C58 32 70 40 50 80 C30 40 42 32 50 20 Z"
-              fill="#145F49"
-              opacity="0.85"
-            />
-          </svg>
+         <svg viewBox="0 0 100 100" className="w-full h-full">
+  <text
+    x="50"
+    y="62"
+    textAnchor="middle"
+    fontSize="64"
+    fontFamily="Noto Serif Devanagari, serif"
+    fill="#cf640d"
+    fontWeight="600"
+  >
+    ॐ
+  </text>
+</svg>
         </motion.div>
 
         <motion.div
@@ -113,9 +118,13 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 1.2 }}
             className="font-playfair italic text-5xl sm:text-7xl md:text-8xl gold-gradient-text font-bold tracking-wide leading-tight"
           >
-            Akhil <span className="font-cormorant font-light text-maroon-700 text-3xl sm:text-5xl md:text-6xl mx-2">&</span> Anjitha
-          </motion.h1>
-          <div className="w-40 h-[1.5px] mx-auto" style={{ background: 'linear-gradient(90deg, transparent, #145F49, #C9A46B, #145F49, transparent)' }} />
+  Akhil{" "}
+  <span className="font-cormorant font-light text-[#B08D57] mx-2">
+    &
+  </span>{" "}
+  Anjitha       
+</motion.h1>
+          <div className="w-40 h-[1.5px] mx-auto" style={{ background: 'linear-gradient(90deg, transparent, #856202, #d18615, #cf5e1d, transparent)' }} />
         </div>
 
         <motion.div

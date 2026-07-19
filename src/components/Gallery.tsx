@@ -52,7 +52,50 @@ export default function Gallery() {
 
   return (
     <section id="gallery" className="py-24 bg-maroon-950/40 relative overflow-hidden border-b border-gold-400/10">
+      
+          {/* Rangoli dot-mandala, left side */}
+    <div className="absolute top-1/2 -translate-y-1/2 -left-20 w-64 h-64 opacity-[0.10] pointer-events-none z-0">
+      <svg viewBox="0 0 200 200" className="w-full h-full mandala-spin-reverse">
+        {[70, 50, 30].map((r, ring) => (
+          <g key={ring}>
+            {Array.from({ length: 12 }).map((_, i) => (
+              <circle
+                key={i}
+                cx={100 + r * Math.cos((i * 30 * Math.PI) / 180)}
+                cy={100 + r * Math.sin((i * 30 * Math.PI) / 180)}
+                r={ring === 0 ? 4 : 3}
+                fill={ring % 2 === 0 ? '#C97D3D' : '#A64420'}
+              />
+            ))}
+          </g>
+        ))}
+        <circle cx="100" cy="100" r="10" fill="#7A2E12" />
+      </svg>
+    </div>
+
+    {/* Paisley spray, right side */}
+    <div className="absolute top-10 -right-16 w-64 h-64 opacity-[0.10] pointer-events-none z-0">
+      <svg viewBox="0 0 200 200" className="w-full h-full mandala-spin">
+        {Array.from({ length: 6 }).map((_, idx) => (
+          <path
+            key={idx}
+            d="M100 40 C130 55 140 85 100 110 C60 85 70 55 100 40 Z"
+            fill="#C97D3D"
+            transform={`rotate(${idx * 60} 100 100)`}
+          />
+        ))}
+      </svg>
+    </div>
+
+    {/* Existing blur blobs stay */}
+    <div className="absolute top-10 right-10 w-72 h-72 bg-gold-400/10 rounded-full filter blur-3xl z-0 pointer-events-none" />
+    <div className="absolute bottom-10 left-10 w-72 h-72 bg-gold-300/15 rounded-full filter blur-3xl z-0 pointer-events-none" />
+
+    <div className="max-w-6xl mx-auto px-4 relative z-10">
+      
+    </div>
       <div className="max-w-6xl mx-auto px-4 relative z-10">
+        
         
         {/* Section Heading */}
         <div className="text-center max-w-2xl mx-auto mb-12">
